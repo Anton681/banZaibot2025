@@ -224,7 +224,7 @@ async def process_dog_answer(message: Message):
 
 @router.message(F.text == 'Общежития для городских🛋')
 async def process_dog_answer(message: Message):
-    await message.answer(text=punk_txt['gorog'], reply_markup=keyboard33, link_preview_options=options_1)
+    await message.answer(text=punk_txt['gorod'], reply_markup=keyboard33, link_preview_options=options_1)
 
 @router.message(F.text == 'Беседы общежитий📳')
 async def process_dog_answer(message: Message):
