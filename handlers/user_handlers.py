@@ -41,7 +41,7 @@ async def process_dog_answer(message: Message):
 async def process_dog_answer(message: Message):
     await message.answer(text=inst_txt['opisuch'], reply_markup=keyboard11)
 
-@router.message(F.text == 'Что нужно взять для учёбы?')
+@router.message(F.text == 'Что нужно взять для учёбы?🎒')
 async def process_dog_answer(message: Message):
     await message.answer(text=inst_txt['brat'], reply_markup=keyboard10)
 
@@ -89,7 +89,7 @@ async def process_dog_answer(message: Message):
 async def process_dog_answer(message: Message):
     await message.answer_photo(photo=photo_ids['ten'], caption=inst_txt['ten'], reply_markup=keyboard131, link_preview_options=options_1)
 
-@router.message(F.text == 'Студенческие активности в Институте🎒')
+@router.message(F.text == 'Студенческие активности в Институте⚡️')
 async def process_dog_answer(message: Message):
     await message.answer(text=inst_txt['aktiv'], reply_markup=keyboard14)
 
