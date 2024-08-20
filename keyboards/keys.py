@@ -45,7 +45,7 @@ button_3 = KeyboardButton(text='Общежития🏘')
 button_31 = KeyboardButton(text='Заезд и заселение🚚')
 button_311 = KeyboardButton(text='Дорога до ПУНКа🛣️')
 button_312 = KeyboardButton(text='Заселение для граждан РФ🪆')
-button_313 = KeyboardButton(text='Заселение для нерусских🌏')
+button_313 = KeyboardButton(text='Заселение для иностранных граждан🌏')
 button_32 = KeyboardButton(text='Оснащение комнат🛏')
 button_33 = KeyboardButton(text='Что есть внутри кампуса?🏟')
 button_34 = KeyboardButton(text='Прикрепление к больнице')

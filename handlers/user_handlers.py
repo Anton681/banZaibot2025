@@ -214,7 +214,7 @@ async def process_dog_answer(message: Message):
 async def process_dog_answer(message: Message):
     await message.answer(text=punk_txt['russ'], reply_markup=keyboard311, link_preview_options=options_1)
 
-@router.message(F.text == 'Заселение для нерусских🌏')
+@router.message(F.text == 'Заселение для иностранных граждан🌏')
 async def process_dog_answer(message: Message):
     await message.answer(text=punk_txt['neruss'], reply_markup=keyboard311)
 
