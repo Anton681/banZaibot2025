@@ -2,6 +2,7 @@ from aiogram.types import (KeyboardButton, Message, ReplyKeyboardMarkup,
                            ReplyKeyboardRemove, InlineKeyboardButton, InlineKeyboardMarkup)
 
 button_1 = KeyboardButton(text='Институт и учёба👩‍🏫')
+button_10 = KeyboardButton(text='Что нужно взять для учёбы?')
 button_11 = KeyboardButton(text='Обучение в институте📚')
 button_111 = KeyboardButton(text='Английский язык🇬🇧')
 button_112 = KeyboardButton(text='Физическая культура⚽')
@@ -102,8 +103,11 @@ keyboard_e = ReplyKeyboardMarkup(
     keyboard=[[button_main]], resize_keyboard=True
     )
 keyboard1 = ReplyKeyboardMarkup(
-    keyboard=[[button_11], [button_12], [button_13], [button_14], [button_15], [button_16],[button_main]],
+    keyboard=[[button_10], [button_11], [button_12], [button_13], [button_14], [button_15], [button_16],[button_main]],
     resize_keyboard=True
+    )
+keyboard10 = ReplyKeyboardMarkup(
+    keyboard=[[button_1], [button_main]], resize_keyboard=True
     )
 keyboard11 = ReplyKeyboardMarkup(
     keyboard=[[button_113], [button_114],[button_111], [button_112], [button_1], [button_main]], resize_keyboard=True
