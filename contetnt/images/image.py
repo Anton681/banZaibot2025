@@ -18,3 +18,6 @@ photo_ids: dict[str, str] = {
     'mendel': 'AgACAgIAAxkBAAI3e2a89HXnnw3-ayVhv6D1SXge2UhNAAKp4DEb7_LoSZmLeNVVSmYrAQADAgADeQADNQQ',
     'ten': 'AgACAgIAAxkBAAI3j2a89or-xiOvFqtEFlhHC7nbXigtAAK04DEb7_LoSbzdtqVHAad5AQADAgADeQADNQQ'
 }
+docs_ids: dict[str, str] = {
+    'kio': 'BQACAgIAAxkBAAI--GbE-EhZq82-FDvr1hJE9VSpiZwnAAJeXAACe50oSjwL26MBHQu2NQQ'
+}

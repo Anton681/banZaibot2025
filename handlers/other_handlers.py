@@ -31,6 +31,8 @@ LEXICON: dict[str, str] = {
     'video_id2': 'BAACAgIAAxkBAAIVGGPKZTURYRphKtnnVFHy8Oa6OxPXAAJ6IwACkhBRSnfUGQW2UKeBLQQ',
 }
 
+
+
 def get_markup(width: int, *args, **kwargs) -> InlineKeyboardMarkup:
     # Инициализируем билдер
     kb_builder = InlineKeyboardBuilder()
@@ -54,8 +56,7 @@ def get_markup(width: int, *args, **kwargs) -> InlineKeyboardMarkup:
     # Возвращаем объект инлайн-клавиатуры
     return kb_builder.as_markup()
 
-# Этот хэндлер будет срабатывать на любые ваши сообщения,
-# кроме команд "/start" и "/help"
+
 @router.message()
 async def process_help_command(message: Message):
     await message.answer(text=LEXICON_RU['/help'])

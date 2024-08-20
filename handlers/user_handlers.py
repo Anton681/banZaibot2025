@@ -28,8 +28,13 @@ async def process_html_command(message: Message):
 async def process_dog_answer(message: Message):
     await message.answer(text='Что вас интересует?', reply_markup=keyboard_main)
 
-@router.message(F.photo)
+
+@router.message(F.document)
 async def photo_handler(message: Message) -> None:
+    await message.answer(f"ID документа {message.document.file_id}")
+
+@router.message(F.photo)
+async def document_handler(message: Message) -> None:
     photo_data = message.photo[-1]
     await message.answer(f'{photo_data}')
 
