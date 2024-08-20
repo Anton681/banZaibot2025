@@ -3,7 +3,7 @@ from aiogram.filters import Command, CommandStart, StateFilter
 from aiogram.types import (CallbackQuery, InlineKeyboardButton, InputMediaPhoto,
                            InlineKeyboardMarkup, Message, PhotoSize, InputFile, FSInputFile, URLInputFile, BufferedInputFile, LinkPreviewOptions)
 from lexicon.lexicon import LEXICON_RU
-from keyboards.keys import keyboard_main,keyboard_e,keyboardcard, keyboard_end, keyboard1, keyboard11, keyboard111, keyboard12, keyboard121,keyboard6, keyboard61, keyboard122, keyboard31, keyboard311, keyboard2, keyboard2e, keyboard23, keyboard33, keyboard34,keyboard23e, keyboard25, keyboard251, keyboard26, keyboard261, keyboard27, keyboard271, keyboard13, keyboard131, keyboard14, keyboard141, keyboard15, keyboard151, keyboard3, keyboard4, keyboard41
+from keyboards.keys import keyboard_main,keyboard_e, keyboard10, keyboardcard, keyboard_end, keyboard1, keyboard11, keyboard111, keyboard12, keyboard121,keyboard6, keyboard61, keyboard122, keyboard31, keyboard311, keyboard2, keyboard2e, keyboard23, keyboard33, keyboard34,keyboard23e, keyboard25, keyboard251, keyboard26, keyboard261, keyboard27, keyboard271, keyboard13, keyboard131, keyboard14, keyboard141, keyboard15, keyboard151, keyboard3, keyboard4, keyboard41
 from contetnt.electro import resource, groups, faq
 from contetnt.institute import inst_txt
 from contetnt.okrest import okrest_txt
@@ -40,6 +40,10 @@ async def process_dog_answer(message: Message):
 @router.message(F.text == 'Обучение в институте📚')
 async def process_dog_answer(message: Message):
     await message.answer(text=inst_txt['opisuch'], reply_markup=keyboard11)
+
+@router.message(F.text == 'Что нужно взять для учёбы?')
+async def process_dog_answer(message: Message):
+    await message.answer(text=inst_txt['brat'], reply_markup=keyboard10)
 
 @router.message(F.text == 'Общая структура учёбы📝')
 async def process_dog_answer(message: Message):
