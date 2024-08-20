@@ -239,7 +239,7 @@ async def process_dog_answer(message: Message):
 async def process_dog_answer(message: Message):
     await message.answer(text=punk_txt['chats'], reply_markup=keyboard33, link_preview_options=options_1)
 
-@router.message(F.text == 'Прикрепление к больнице')
+@router.message(F.text == 'Прикрепление к больнице👩‍⚕️')
 async def process_dog_answer(message: Message):
     await message.answer(text=punk_txt['prik'], reply_markup=keyboard34, link_preview_options=options_1)
 
