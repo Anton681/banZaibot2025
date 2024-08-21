@@ -165,7 +165,7 @@ async def process_dog_answer(message: Message):
 @router.message(F.text == 'Аптеки💊')
 async def process_dog_answer(message: Message):
     await message.answer_photo(photo=photo_ids['apt'])
-    await message.answer(caption=okrest_txt['apt'], reply_markup=keyboard251, link_preview_options=options_1)
+    await message.answer(text=okrest_txt['apt'], reply_markup=keyboard251, link_preview_options=options_1)
 
 @router.message(F.text == 'Развлечения и отдых🎡')
 async def process_dog_answer(message: Message):
