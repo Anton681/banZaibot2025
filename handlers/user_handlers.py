@@ -362,6 +362,9 @@ async def process_dog_answer(message: Message):
 @router.message(F.text == 'Кафедра органической химии 🧪')
 async def process_dog_answer(message: Message):
     await message.answer(text=org_txt['opisanie'], reply_markup=keyboard100, link_preview_options=options_1)
+@router.message(F.text == '"Химия ацетиленовых соединений"')
+async def process_dog_answer(message: Message):
+    await message.answer(text=org_txt['balova'], reply_markup=keyboard100b, link_preview_options=options_1)
 @router.message(F.text == 'Лаборатория нековалентного органокатализа')
 async def process_dog_answer(message: Message):
     await message.answer_photo(photo=photo_ids['bolot'],caption=org_txt['bolotin'], reply_markup=keyboard100b, link_preview_options=options_1)
