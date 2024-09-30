@@ -353,7 +353,7 @@ async def process_button_press(callback: CallbackQuery, bot=Bot):
 
 @router.message(F.text == 'Информация о научных группах')
 async def process_dog_answer(message: Message):
-    await message.answer(text='Выберите интересующую вас кафедру. Здесь их много)', reply_markup=keyboard00, link_preview_options=options_1)
+    await message.answer(text='Выберите интересующую вас кафедру, чтобы осзнакомиться с её научными группами.', reply_markup=keyboard00, link_preview_options=options_1)
 
 @router.message(F.text == 'Назад к кафедрам')
 async def process_dog_answer(message: Message):
