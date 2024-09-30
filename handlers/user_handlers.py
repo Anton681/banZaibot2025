@@ -396,7 +396,7 @@ async def process_dog_answer(message: Message):
     await message.answer(text=anal_txt['bulatov'], reply_markup=keyboard200b, link_preview_options=options_1)
 @router.message(F.text == 'Лаборатория прикладной хемометрики')
 async def process_dog_answer(message: Message):
-    await message.answer(text=anal_txt['kirsanov'], reply_markup=keyboard200b, link_preview_options=options_1)
+    await message.answer_photo(photo=photo_ids['kirs'],caption=anal_txt['kirsanov'], reply_markup=keyboard200b, link_preview_options=options_1)
 @router.message(F.text == 'Лаборатория изучения биологически активных растительных веществ')
 async def process_dog_answer(message: Message):
     await message.answer(text=anal_txt['shishov'], reply_markup=keyboard200b, link_preview_options=options_1)
@@ -421,13 +421,13 @@ async def process_dog_answer(message: Message):
     await message.answer(text=phys_txt['peshkova'], reply_markup=keyboard300b, link_preview_options=options_1)
 @router.message(F.text == 'Научная группа Вознесенского М.А.')
 async def process_dog_answer(message: Message):
-    await message.answer(text=phys_txt['opisanie'], reply_markup=keyboard300b, link_preview_options=options_1)
+    await message.answer(text=phys_txt['voznes'], reply_markup=keyboard300b, link_preview_options=options_1)
 @router.message(F.text == 'Группа компьютерного моделирования')
 async def process_dog_answer(message: Message):
-    await message.answer(text=phys_txt['opisanie'], reply_markup=keyboard300b, link_preview_options=options_1)
+    await message.answer(text=phys_txt['sizov'], reply_markup=keyboard300b, link_preview_options=options_1)
 @router.message(F.text == '"Электрохимические сенсоры на основе ионофоров"')
 async def process_dog_answer(message: Message):
-    await message.answer(text=phys_txt['opisanie'], reply_markup=keyboard300b, link_preview_options=options_1)
+    await message.answer(text=phys_txt['mikhelson'], reply_markup=keyboard300b, link_preview_options=options_1)
 
 @router.message(F.text == 'Кафедра общей и неорганической химии ⚗️')
 async def process_dog_answer(message: Message):
@@ -502,7 +502,7 @@ async def process_dog_answer(message: Message):
     await message.answer(text=med_txt['opisanie'], reply_markup=keyboard900, link_preview_options=options_1)
 @router.message(F.text == 'Лаборатория биоматериалов')
 async def process_dog_answer(message: Message):
-    await message.answer_photo(photo=photo_ids['korz'],caption=med_txt['opisanie'], reply_markup=keyboard900b, link_preview_options=options_1)
+    await message.answer_photo(photo=photo_ids['korz'],caption=med_txt['KorzhVlakh'], reply_markup=keyboard900b, link_preview_options=options_1)
 
 @router.message(F.text == 'Кафедра химии ВМС 🧬')
 async def process_dog_answer(message: Message):
