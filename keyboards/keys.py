@@ -66,6 +66,7 @@ button_64 = KeyboardButton(text='Кружки и клубы🪗')
 button_main = KeyboardButton(text='В начало🔙')
 
 button_100 = KeyboardButton(text='Кафедра органической химии 🧪')
+button_100a = KeyboardButton(text='"Химия ацетиленовых соединений"')
 button_101 = KeyboardButton(text='Лаборатория нековалентного органокатализа')
 button_102 = KeyboardButton(text='"Химия напряжённых азотсодержащих гетероциклов в молекулярном дизайне"')
 button_103 = KeyboardButton(text='Научная группа тонкого органического синтеза')
@@ -124,7 +125,7 @@ keyboard00 = ReplyKeyboardMarkup(
     )
 
 keyboard100 = ReplyKeyboardMarkup(
-    keyboard=[[button_101], [button_102], [button_103], [button_104], [button_105], [button_106],[button_111а] ], resize_keyboard=True
+    keyboard=[[button_100a],[button_101], [button_102], [button_103], [button_104], [button_105], [button_106],[button_111а] ], resize_keyboard=True
     )
 keyboard100b=ReplyKeyboardMarkup(
     keyboard=[[button_100], [button_main]], resize_keyboard=True
