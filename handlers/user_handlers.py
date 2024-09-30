@@ -3,13 +3,14 @@ from aiogram.filters import Command, CommandStart, StateFilter
 from aiogram.types import (CallbackQuery, InlineKeyboardButton, InputMediaPhoto,
                            InlineKeyboardMarkup, Message, PhotoSize, InputFile, FSInputFile, URLInputFile, BufferedInputFile, LinkPreviewOptions)
 from lexicon.lexicon import LEXICON_RU
-from keyboards.keys import keyboard_main,keyboard_e, keyboard10, keyboardcard, keyboard_end, keyboard1, keyboard11, keyboard111, keyboard12, keyboard121,keyboard6, keyboard61, keyboard122, keyboard31, keyboard311, keyboard2, keyboard2e, keyboard23, keyboard33, keyboard34,keyboard23e, keyboard25, keyboard251, keyboard26, keyboard261, keyboard27, keyboard271, keyboard13, keyboard131, keyboard14, keyboard141, keyboard15, keyboard151, keyboard3, keyboard4, keyboard41
+from keyboards.keys import keyboard_main,keyboard_e, keyboard10,keyboard00,keyboard100b, keyboard100,keyboard200,keyboard200b,keyboard300,keyboard300b, keyboard400, keyboard400b, keyboard500,keyboard500b, keyboard600, keyboard600b, keyboard700, keyboard700b,keyboard1000b,keyboard1100,keyboard1100b,keyboard1200,keyboard1200b,keyboard1300,keyboard1300b, keyboard800, keyboard800b, keyboardcard, keyboard_end, keyboard1, keyboard11, keyboard111, keyboard12, keyboard121,keyboard6, keyboard61, keyboard122, keyboard900, keyboard900b, keyboard1000, keyboard1000b, keyboard31, keyboard311, keyboard2, keyboard2e, keyboard23, keyboard33, keyboard34,keyboard23e, keyboard25, keyboard251, keyboard26, keyboard261, keyboard27, keyboard271, keyboard13, keyboard131, keyboard14, keyboard141, keyboard15, keyboard151, keyboard3, keyboard4, keyboard41
 from contetnt.electro import resource, groups, faq
 from contetnt.institute import inst_txt
 from contetnt.okrest import okrest_txt
 from contetnt.punk import punk_txt
 from contetnt.images.image import photo_ids
 from contetnt.aktiv import aktiv_txt
+from contetnt.labs import org_txt, anal_txt, phys_txt, oinch_txt, physorg_txt, termkin_txt, colloid_txt, laser_txt, med_txt, vms_txt, electro_txt, quant_txt, htt_txt
 router = Router()
 
 options_1 = LinkPreviewOptions(is_disabled=True)
@@ -67,10 +68,6 @@ async def process_dog_answer(message: Message):
 @router.message(F.text == 'Научная деятельность🧑‍🔬')
 async def process_dog_answer(message: Message):
     await message.answer(text=inst_txt['sience'], reply_markup=keyboard12, link_preview_options=options_1)
-
-@router.message(F.text == 'Виртуальные экскурсии по научным группам')
-async def process_dog_answer(message: Message):
-    await message.answer(text='будет позже!', reply_markup=keyboard121)
 
 @router.message(F.text == 'Советы по выбору научной группы💬')
 async def process_dog_answer(message: Message):
@@ -350,3 +347,184 @@ async def process_button_press(callback: CallbackQuery, bot=Bot):
     await callback.message.delete(text='Что вас интересует?', reply_markup=keyboard_main)
     await callback.message.answer(
        text='Что вас интересует?', reply_markup=keyboard_main)
+
+
+
+
+@router.message(F.text == 'Информация о научных группах')
+async def process_dog_answer(message: Message):
+    await message.answer(text='Выберите интересующую вас кафедру. Здесь их много)', reply_markup=keyboard00, link_preview_options=options_1)
+
+@router.message(F.text == 'Назад к кафедрам')
+async def process_dog_answer(message: Message):
+    await message.answer(text='Выберите интересующую вас кафедру.', reply_markup=keyboard00, link_preview_options=options_1)
+
+@router.message(F.text == 'Кафедра органической химии 🧪')
+async def process_dog_answer(message: Message):
+    await message.answer(text=org_txt['opisanie'], reply_markup=keyboard100, link_preview_options=options_1)
+@router.message(F.text == 'Лаборатория нековалентного органокатализа')
+async def process_dog_answer(message: Message):
+    await message.answer_photo(photo=photo_ids['bolot'],caption=org_txt['bolotin'], reply_markup=keyboard100b, link_preview_options=options_1)
+@router.message(F.text == '"Химия напряжённых азотсодержащих гетероциклов в молекулярном дизайне"')
+async def process_dog_answer(message: Message):
+    await message.answer(text=org_txt['khleb'], reply_markup=keyboard100b, link_preview_options=options_1)
+@router.message(F.text == 'Научная группа тонкого органического синтеза')
+async def process_dog_answer(message: Message):
+    await message.answer(text=org_txt['ledov'], reply_markup=keyboard100b, link_preview_options=options_1)
+@router.message(F.text == 'Научная группа Константина Родыгина')
+async def process_dog_answer(message: Message):
+    await message.answer(text=org_txt['rodyg'], reply_markup=keyboard100b, link_preview_options=options_1)
+@router.message(F.text == 'Научная группа Зенкевича И.Г.')
+async def process_dog_answer(message: Message):
+    await message.answer(text=org_txt['zenkev'], reply_markup=keyboard100b, link_preview_options=options_1)
+@router.message(F.text == '"Химия азотистых гетероциклов"')
+async def process_dog_answer(message: Message):
+    await message.answer(text=org_txt['rostov'], reply_markup=keyboard100b, link_preview_options=options_1)
+
+
+@router.message(F.text == 'Кафедра аналитической химии ⚖️')
+async def process_dog_answer(message: Message):
+    await message.answer(text=anal_txt['opisanie'], reply_markup=keyboard200, link_preview_options=options_1)
+@router.message(F.text == 'Лаборатория электрохимических методов анализа и амперометрических сенсоров')
+async def process_dog_answer(message: Message):
+    await message.answer(text=anal_txt['ermak'], reply_markup=keyboard200b, link_preview_options=options_1)
+@router.message(F.text == '"Методы разделения и концентрирования"')
+async def process_dog_answer(message: Message):
+    await message.answer(text=anal_txt['bulatov'], reply_markup=keyboard200b, link_preview_options=options_1)
+@router.message(F.text == 'Лаборатория прикладной хемометрики')
+async def process_dog_answer(message: Message):
+    await message.answer(text=anal_txt['kirsanov'], reply_markup=keyboard200b, link_preview_options=options_1)
+@router.message(F.text == 'Лаборатория изучения биологически активных растительных веществ')
+async def process_dog_answer(message: Message):
+    await message.answer(text=anal_txt['shishov'], reply_markup=keyboard200b, link_preview_options=options_1)
+@router.message(F.text == '"Методы атомного спектрального анализа и ядерная гамма-резонансная спектроскопия"')
+async def process_dog_answer(message: Message):
+    await message.answer(text=anal_txt['SSS'], reply_markup=keyboard200b, link_preview_options=options_1)
+@router.message(F.text == 'Группа мембранных материалов и мембранных методов разделения')
+async def process_dog_answer(message: Message):
+    await message.answer_photo(photo=photo_ids['penkova'],caption=anal_txt['penkova'], reply_markup=keyboard200b, link_preview_options=options_1)
+
+@router.message(F.text == 'Кафедра физической химии 💎')
+async def process_dog_answer(message: Message):
+    await message.answer(text=phys_txt['opisanie'], reply_markup=keyboard300, link_preview_options=options_1)
+@router.message(F.text == '"Физическая химия мягкой материи"')
+async def process_dog_answer(message: Message):
+    await message.answer(text=phys_txt['viktor'], reply_markup=keyboard300b, link_preview_options=options_1)
+@router.message(F.text == '"Плазмонно усиленная спектроскопия и биоимиджинг"')
+async def process_dog_answer(message: Message):
+    await message.answer_photo(photo=photo_ids['solov'],caption=phys_txt['solov'], reply_markup=keyboard300b, link_preview_options=options_1)
+@router.message(F.text == 'Группа оптических сенсоров')
+async def process_dog_answer(message: Message):
+    await message.answer(text=phys_txt['peshkova'], reply_markup=keyboard300b, link_preview_options=options_1)
+@router.message(F.text == 'Научная группа Вознесенского М.А.')
+async def process_dog_answer(message: Message):
+    await message.answer(text=phys_txt['opisanie'], reply_markup=keyboard300b, link_preview_options=options_1)
+@router.message(F.text == 'Группа компьютерного моделирования')
+async def process_dog_answer(message: Message):
+    await message.answer(text=phys_txt['opisanie'], reply_markup=keyboard300b, link_preview_options=options_1)
+@router.message(F.text == '"Электрохимические сенсоры на основе ионофоров"')
+async def process_dog_answer(message: Message):
+    await message.answer(text=phys_txt['opisanie'], reply_markup=keyboard300b, link_preview_options=options_1)
+
+@router.message(F.text == 'Кафедра общей и неорганической химии ⚗️')
+async def process_dog_answer(message: Message):
+    await message.answer(text=oinch_txt['opisanie'], reply_markup=keyboard400, link_preview_options=options_1)
+@router.message(F.text == 'Научная группа донорно-акцепторных взаимодействий')
+async def process_dog_answer(message: Message):
+    await message.answer(text=oinch_txt['timosh'], reply_markup=keyboard400b, link_preview_options=options_1)
+@router.message(F.text == '"Люминесцентные комплексы для оптоэлектроники"')
+async def process_dog_answer(message: Message):
+    await message.answer(text=oinch_txt['grach'], reply_markup=keyboard400b, link_preview_options=options_1)
+@router.message(F.text == 'Группа синтеза и исследования наночастиц и наноструктурированных материалов')
+async def process_dog_answer(message: Message):
+    await message.answer_photo(photo=photo_ids['osmol'],caption=oinch_txt['osmol'], reply_markup=keyboard400b, link_preview_options=options_1)
+@router.message(F.text == 'Научная группа высокотемпературной химии оксидных систем и материалов')
+async def process_dog_answer(message: Message):
+    await message.answer(text=oinch_txt['stol'], reply_markup=keyboard400b, link_preview_options=options_1)
+@router.message(F.text == 'Лаборатория химии растворов')
+async def process_dog_answer(message: Message):
+    await message.answer(text=oinch_txt['skip'], reply_markup=keyboard400b, link_preview_options=options_1)
+
+@router.message(F.text == 'Кафедра физической органической химии 🧲')
+async def process_dog_answer(message: Message):
+    await message.answer(text=physorg_txt['opisanie'], reply_markup=keyboard500, link_preview_options=options_1)
+@router.message(F.text == 'Лаборатория невалентных взаимодействий')
+async def process_dog_answer(message: Message):
+    await message.answer_photo(photo=photo_ids['tolstoy'],caption=physorg_txt['tolstoy'], reply_markup=keyboard500b, link_preview_options=options_1)
+@router.message(F.text == 'Научная группа Боярского В.П.')
+async def process_dog_answer(message: Message):
+    await message.answer(text=physorg_txt['Boyarskiy'], reply_markup=keyboard500b, link_preview_options=options_1)
+@router.message(F.text == 'Научная группа Кинжалова Михаила Андреевича')
+async def process_dog_answer(message: Message):
+    await message.answer_photo(photo=photo_ids['kinz'],caption=physorg_txt['kinzhal'], reply_markup=keyboard500b, link_preview_options=options_1)
+@router.message(F.text == '"Нековалентные взаимодействия в твёрдой фазе"')
+async def process_dog_answer(message: Message):
+    await message.answer(text=physorg_txt['ivanov'], reply_markup=keyboard500b, link_preview_options=options_1)
+
+@router.message(F.text == 'Кафедра химической термодинамики и кинетики 🚿')
+async def process_dog_answer(message: Message):
+    await message.answer(text=termkin_txt['opisanie'], reply_markup=keyboard600, link_preview_options=options_1)
+@router.message(F.text == 'Научная группа Тойкки А.М.')
+async def process_dog_answer(message: Message):
+    await message.answer(text=termkin_txt['toikka'], reply_markup=keyboard600b, link_preview_options=options_1)
+@router.message(F.text == '"Термодинамические и кинетические исследования мембранных процессов"')
+async def process_dog_answer(message: Message):
+    await message.answer(text=termkin_txt['pulyalina'], reply_markup=keyboard600b, link_preview_options=options_1)
+@router.message(F.text == 'Научная группа Зверевой И.А.')
+async def process_dog_answer(message: Message):
+    await message.answer(text=termkin_txt['zvereva'], reply_markup=keyboard600b, link_preview_options=options_1)
+
+@router.message(F.text == 'Кафедра коллоидной химии 💧')
+async def process_dog_answer(message: Message):
+    await message.answer(text=colloid_txt['opisanie'], reply_markup=keyboard700, link_preview_options=options_1)
+@router.message(F.text == '"Поверхностные явления в наногетерогенных жидкостях"')
+async def process_dog_answer(message: Message):
+    await message.answer(text=colloid_txt['noskov'], reply_markup=keyboard700b, link_preview_options=options_1)
+@router.message(F.text == 'Научная группа Русанова А.И.')
+async def process_dog_answer(message: Message):
+    await message.answer(text=colloid_txt['rusanov'], reply_markup=keyboard700b, link_preview_options=options_1)
+
+@router.message(F.text == 'Кафедра лазерной химии 💡')
+async def process_dog_answer(message: Message):
+    await message.answer(text=laser_txt['opisanie'], reply_markup=keyboard800, link_preview_options=options_1)
+@router.message(F.text == 'Группа лазерного синтеза')
+async def process_dog_answer(message: Message):
+    await message.answer(text=laser_txt['manshina'], reply_markup=keyboard800b, link_preview_options=options_1)
+@router.message(F.text == 'Группа лазерной спектроскопии и модификации материалов')
+async def process_dog_answer(message: Message):
+    await message.answer(text=laser_txt['tver'], reply_markup=keyboard800b, link_preview_options=options_1)
+
+@router.message(F.text == 'Кафедра медицинской химии 🦠')
+async def process_dog_answer(message: Message):
+    await message.answer(text=med_txt['opisanie'], reply_markup=keyboard900, link_preview_options=options_1)
+@router.message(F.text == 'Лаборатория биоматериалов')
+async def process_dog_answer(message: Message):
+    await message.answer_photo(photo=photo_ids['korz'],caption=med_txt['opisanie'], reply_markup=keyboard900b, link_preview_options=options_1)
+
+@router.message(F.text == 'Кафедра химии ВМС 🧬')
+async def process_dog_answer(message: Message):
+    await message.answer(text=vms_txt['opisanie'], reply_markup=keyboard1000, link_preview_options=options_1)
+@router.message(F.text == '"Функциональные полисилоксаны и материалы на их основе"')
+async def process_dog_answer(message: Message):
+    await message.answer(text=vms_txt['islam'], reply_markup=keyboard1000b, link_preview_options=options_1)
+
+@router.message(F.text == 'Кафедра электрохимии 🔋')
+async def process_dog_answer(message: Message):
+    await message.answer(text=electro_txt['opisanie'], reply_markup=keyboard1100, link_preview_options=options_1)
+@router.message(F.text == 'Научная группа Кондратьева В.В.')
+async def process_dog_answer(message: Message):
+    await message.answer(text=electro_txt['kondratev'], reply_markup=keyboard1100b, link_preview_options=options_1)
+
+@router.message(F.text == 'Кафедра квантовой химии ☢️')
+async def process_dog_answer(message: Message):
+    await message.answer(text=quant_txt['opisanie'], reply_markup=keyboard1200, link_preview_options=options_1)
+@router.message(F.text == 'Научная группа Эварестова Р.А.')
+async def process_dog_answer(message: Message):
+    await message.answer(text=quant_txt['porsev'], reply_markup=keyboard1200b, link_preview_options=options_1)
+
+@router.message(F.text == 'Кафедра химии твёрдого тела 🗿')
+async def process_dog_answer(message: Message):
+    await message.answer(text=htt_txt['opisanie'], reply_markup=keyboard1300, link_preview_options=options_1)
+@router.message(F.text == 'Научная группа Толстого В.П.')
+async def process_dog_answer(message: Message):
+    await message.answer(text=htt_txt['tolstoy'], reply_markup=keyboard1300, link_preview_options=options_1)
