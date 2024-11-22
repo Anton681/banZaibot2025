@@ -24,7 +24,8 @@ photo_ids: dict[str, str] = {
     'tolstoy': 'AgACAgIAAxkBAAMrZv0r_PVpK6xbBTg0u9T5u0YnCnUAAh3jMRvNcelLMEPhsVzsOpEBAAMCAAN5AAM2BA',
     'kinz': 'AgACAgIAAxkBAAMtZv0r_cgAAfYql96x0_762OeA28W8AAIe4zEbzXHpS52aVVFTLtpuAQADAgADeQADNgQ',
     'solov': 'AgACAgIAAxkBAAMvZv0sAXL-uKLahnlZ7xyEpEYAAYXAAAIf4zEbzXHpSyIg6plA25fxAQADAgADeQADNgQ',
-    'kirs': 'AgACAgIAAxkBAAMxZv0sCGNAGZtSQkvMKtZUtpnZfA0AAiDjMRvNcelLeiuLftF4TYgBAAMCAAN5AAM2BA'
+    'kirs': 'AgACAgIAAxkBAAMxZv0sCGNAGZtSQkvMKtZUtpnZfA0AAiDjMRvNcelLeiuLftF4TYgBAAMCAAN5AAM2BA',
+    'SS': 'AgACAgIAAxkBAAIedWdAiA9_dLi8vpNzd1__oSWur4PoAALa5TEbpg0ISh1f12ngs-LnAQADAgADeQADNgQ'
 }
 docs_ids: dict[str, str] = {
     'kio': 'BQACAgIAAxkBAAI--GbE-EhZq82-FDvr1hJE9VSpiZwnAAJeXAACe50oSjwL26MBHQu2NQQ'

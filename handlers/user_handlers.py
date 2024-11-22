@@ -57,6 +57,10 @@ async def process_dog_answer(message: Message):
 async def process_dog_answer(message: Message):
     await message.answer(text=inst_txt['control'], reply_markup=keyboard111)
 
+@router.message(F.text == '22612')
+async def process_dog_answer(message: Message):
+    await message.answer_photo(photo=photo_ids['SS'],caption='Поздравляем!\nВаш IQ больше 80!')
+
 @router.message(F.text == 'Английский язык🇬🇧')
 async def process_dog_answer(message: Message):
     await message.answer(text=inst_txt['english'], reply_markup=keyboard111, link_preview_options=options_1)
