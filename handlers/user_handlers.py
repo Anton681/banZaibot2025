@@ -86,6 +86,10 @@ async def document_handler(message: Message) -> None:
     photo_data = message.photo[-1]
     await message.answer(f'{photo_data}')
 
+@router.message(F.text == 'Реанимация')
+async def process_dog_answer(message: Message):
+    await message.answer(text='Поздравляем! Вы победили!\n Скорее отправляй скрин этого сообщения Антону З. и торпопись получить приз!')
+  
 @router.message(F.text == 'Институт и учёба👩‍🏫')
 async def process_dog_answer(message: Message):
     await message.answer(text=inst_txt['institute'], reply_markup=keyboard1)
