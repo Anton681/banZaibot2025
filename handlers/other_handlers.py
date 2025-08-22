@@ -57,6 +57,16 @@ def get_markup(width: int, *args, **kwargs) -> InlineKeyboardMarkup:
     return kb_builder.as_markup()
 
 
+
+
+
+
+
+
+
+
+
+
 @router.message()
 async def process_help_command(message: Message):
     await message.answer(text=LEXICON_RU['/help'])

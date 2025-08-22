@@ -8,7 +8,7 @@ button_111 = KeyboardButton(text='Английский язык🇬🇧')
 button_112 = KeyboardButton(text='Физическая культура⚽')
 button_113 = KeyboardButton(text='Общая структура учёбы📝')
 button_114 = KeyboardButton(text='Контроль знаний🔠')
-button_12 = KeyboardButton(text='Научная деятельность🧑‍🔬')
+#button_12 = KeyboardButton(text='Научная деятельность🧑‍🔬')
 button_121 = KeyboardButton(text='Информация о научных группах')
 button_122 = KeyboardButton(text='Советы по выбору научной группы💬')
 button_13 = KeyboardButton(text='Олимпиады и конкурсы🏆')
@@ -18,7 +18,7 @@ button_133 = KeyboardButton(text='Турнир естественных наук
 button_14 = KeyboardButton(text='Студенческие активности в Институте⚡️')
 button_141 = KeyboardButton(text='Студсовет Института химии🏳️‍🌈')
 button_142 = KeyboardButton(text='Профбюро Института химии🧯')
-button_143 = KeyboardButton(text='СНО Института химии🗞️')
+#button_143 = KeyboardButton(text='СНО Института химии🗞️')
 button_15 = KeyboardButton(text='Стипендии и матпомощь👛')
 button_151 = KeyboardButton(text='Основные стипендии СПбГУ💶')
 button_152 = KeyboardButton(text='Стипендии от сторонних организаций💷')
@@ -242,7 +242,7 @@ keyboard_e = ReplyKeyboardMarkup(
     keyboard=[[button_main]], resize_keyboard=True
     )
 keyboard1 = ReplyKeyboardMarkup(
-    keyboard=[[button_10], [button_11], [button_12], [button_13], [button_14], [button_15], [button_16],[button_main]],
+    keyboard=[[button_10], [button_11], [button_13], [button_14], [button_15], [button_16],[button_main]],
     resize_keyboard=True
     )
 keyboard10 = ReplyKeyboardMarkup(
@@ -258,10 +258,10 @@ keyboard12 = ReplyKeyboardMarkup(
     keyboard=[[button_121], [button_122], [button_1], [button_main]], resize_keyboard=True
     )
 keyboard121 = ReplyKeyboardMarkup(
-    keyboard=[[button_12], [button_main]], resize_keyboard=True
+    keyboard=[ [button_main]], resize_keyboard=True
     )
 keyboard122 = ReplyKeyboardMarkup(
-    keyboard=[[button_12], [button_main]], resize_keyboard=True
+    keyboard=[ [button_main]], resize_keyboard=True
     )
 keyboard13 = ReplyKeyboardMarkup(
     keyboard=[[button_131], [button_132], [button_133], [button_1], [button_main]],resize_keyboard=True
@@ -270,7 +270,7 @@ keyboard131 = ReplyKeyboardMarkup(
     keyboard=[[button_13], [button_main]],resize_keyboard=True
 )
 keyboard14 = ReplyKeyboardMarkup(
-    keyboard=[[button_141], [button_142], [button_143], [button_1], [button_main]],resize_keyboard=True
+    keyboard=[[button_141], [button_142], [button_1], [button_main]],resize_keyboard=True
 )
 keyboard141 = ReplyKeyboardMarkup(
     keyboard=[[button_14], [button_main]], resize_keyboard=True

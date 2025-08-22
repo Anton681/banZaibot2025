@@ -9,14 +9,63 @@ from contetnt.institute import inst_txt
 from contetnt.okrest import okrest_txt
 from contetnt.punk import punk_txt
 from contetnt.images.image import photo_ids
+from tools.db import add_user, get_all_users
 from contetnt.aktiv import aktiv_txt
 from contetnt.labs import org_txt, anal_txt, phys_txt, oinch_txt, physorg_txt, termkin_txt, colloid_txt, laser_txt, med_txt, vms_txt, electro_txt, quant_txt, htt_txt
 router = Router()
 
 options_1 = LinkPreviewOptions(is_disabled=True)
 
+@router.message(Command(commands=['isadmin']))
+async def check_is_admin(message: Message):
+    if message.from_user.id == 788786214:
+        await message.answer("Да, вы администратор.")
+    else:
+        await message.answer("Нет, вы не администратор.")
+
+
+@router.message(Command(commands=['getusers']))
+async def get_users_list(message: Message):
+    if message.from_user.id == 788786214:
+        users = sorted(get_all_users(), key=lambda x: x['first_name'])
+        response = "Список пользователей:\n"
+        for i, user in enumerate(users):
+            response += f"{i + 1}. Имя: {user['first_name']} (@{user['username']})\nID: {user['user_id']}\n\n"
+        await message.answer(response)
+    else:
+        await message.answer("У вас нет прав для выполнения этой команды.")
+
+@router.message(Command(commands=['sendall']))
+async def send_mass_notification(message: Message):
+    if message.from_user.id == 788786214:
+        text_to_send = message.text.replace("/sendall ", "").strip()
+        if len(text_to_send) == 0:
+            await message.answer("Нужно ввести текст сообщения после команды.")
+            return
+
+        users = get_all_users()
+        successful_sends = 0
+        failed_sends = 0
+
+        for user in users:
+            try:
+                await message.bot.send_message(chat_id=user['user_id'], text=text_to_send)
+                successful_sends += 1
+            except Exception as e:
+                print(f"Ошибка при отправке сообщения пользователю {user['user_id']}: {e}")
+                failed_sends += 1
+
+        await message.answer(f"Сообщение отправлено {successful_sends} пользователям. "
+                            f"Ошибок: {failed_sends}.")
+    else:
+        await message.answer("У вас нет прав для выполнения этой команды.")
+
+
+
+
 @router.message(CommandStart())
 async def process_html_command(message: Message):
+    add_user(message.from_user.id, message.from_user.username, message.from_user.first_name, message.from_user.last_name)
     await message.answer_photo(photo=photo_ids['cat'],
                                caption='Привет!\nЭтот бот создан активистами Института химии для того, чтобы помочь вам освоиться в этом прекрасном месте.\n\n'
                          'Тут мы постарались собрать всю важную информацию, свои наблюдения, опыт и многие другие вещи, с которыми вам еще предстоит столкнуться.\n\n'
@@ -25,8 +74,8 @@ async def process_html_command(message: Message):
 
 @router.message(F.text == 'В начало🔙')
 async def process_dog_answer(message: Message):
+    add_user(message.from_user.id, message.from_user.username, message.from_user.first_name, message.from_user.last_name)
     await message.answer(text='Что вас интересует?', reply_markup=keyboard_main)
-
 
 @router.message(F.document)
 async def photo_handler(message: Message) -> None:
@@ -59,7 +108,7 @@ async def process_dog_answer(message: Message):
 
 @router.message(F.text == '22612')
 async def process_dog_answer(message: Message):
-    await message.answer_photo(photo=photo_ids['SS'],caption='Поздравляем!\nВаш IQ больше 80!')
+    await message.answer_photo(photo=photo_ids['SS'],caption='Поздрdns dn sавляем!\nВаш IQ больше 80!')
 
 @router.message(F.text == 'Английский язык🇬🇧')
 async def process_dog_answer(message: Message):
@@ -99,7 +148,7 @@ async def process_dog_answer(message: Message):
 
 @router.message(F.text == 'Студсовет Института химии🏳️‍🌈')
 async def process_dog_answer(message: Message):
-    await message.answer_photo(photo=photo_ids['LSS'], caption=inst_txt['SS'], reply_markup=keyboard141, link_preview_options=options_1)
+    await message.answer(text=inst_txt['SS'], reply_markup=keyboard141, link_preview_options=options_1)
 
 @router.message(F.text == 'Профбюро Института химии🧯')
 async def process_dog_answer(message: Message):
