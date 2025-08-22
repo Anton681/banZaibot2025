@@ -4,7 +4,7 @@ from config_data.config import Config, load_config
 from handlers import other_handlers, user_handlers, labs_handlers, admin_handlers
 from aiogram.client.default import DefaultBotProperties
 
-
+#fdsf
 async def main():
     config: Config = load_config()
     bot = Bot(token=config.tg_bot.token, default=DefaultBotProperties(parse_mode='HTML'))
